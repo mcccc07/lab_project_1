@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Cal_cu {
+
+    public static void main(String[] args) {
+
+        double num1;
+        double num2;
+
+        System.out.println("====== START OF THE PROGRAM ======");
+
+        Scanner scan = new Scanner(System.in);
+
+
+        System.out.print("\nEnter a digit: ");
+        num1 = scan.nextInt();
+
+        System.out.print("Enter a digit: ");
+        num2 = scan.nextInt();
+        scan.nextLine();
+
+        System.out.print("Enter an operator(+,-,*,/): ");
+        char sign = scan.next().charAt(0);
+
+        if (sign == '+') {
+            double x = num1 + num2;
+            System.out.println();
+            System.out.println(x);
+            System.out.println("\n====== END OF THE PROGRAM ======");
+        } else if (sign == '-') {
+            double x = num1 - num2;
+            System.out.println();
+            System.out.println(x);
+            System.out.println("\n====== END OF THE PROGRAM ======");
+        } else if (sign == '*') {
+            double x = num1 * num2;
+            System.out.println();
+            System.out.println(x);
+            System.out.println("\n====== END OF THE PROGRAM ======");
+        } else if(sign == '/'){
+            double x = num1 / num2;
+            System.out.println();
+            System.out.println(x);
+            System.out.println("\n====== END OF THE PROGRAM ======");
+        }
+        else {
+            System.out.println("You've Entered a wrong input." + "\n");
+        }
+
+
+            scan.close();
+    }
+}
+
