@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class rollTheDice {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        Random rand = new Random();
+
+        int userInput;
+        int trial = 0;
+        int diceRoll = rand.nextInt(1,6);
+
+        System.out.println("\t\t\t\t\tDice Game");
+        System.out.println("*************************************************");
+
+        System.out.print("Do you want to start the game?(Y/N): ");
+        String userAnswer = scan.nextLine();
+        if (userAnswer.toLowerCase().equals("y")){
+            System.out.println("The dice is rolling... ");
+            for (int i = 5; i > 0; i--) {
+                System.out.println(i);
+                }
+            System.out.println("The dice has been rolled. Drop your guesses now.");
+            System.out.print("What is your guess: ");
+            userInput = scan.nextInt();
+            while (true) {
+                trial++;
+                if (userInput == diceRoll) {
+                    System.out.println("\nYou have guessed it right." + "That took you " + trial + " times");
+                    break;
+                } else {
+                    System.out.print("Try again. Please input again your guess: ");
+                    userInput = scan.nextInt();
+                }
+            }
+        }else{
+            System.out.println("Thank You and Have a nice day.");
+        }
+        scan.close();
+    }
+}
